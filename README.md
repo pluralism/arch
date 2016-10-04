@@ -1,6 +1,6 @@
 ## Connecting to Eduroam on Arch Linux
 
-First of all you need to know what is your wireless interface. Use the command `ip link` to find it out. Wireless interfaces start with **wl**. The command `ip link | grep wl` should list all your interfaces. Use the command ` sudo ip link set $(ip link | grep wl | perl -n -e '/^\d:\s+(.*):/ && print $1')` to extract the name of your wireless interface. You need to make sure that you're connected to your interface by running the command `sudo ip link set interface_name up`.
+First of all you need to know what is your wireless interface. Use the command `ip link` to find it out. Wireless interfaces start with **wl**. The command `ip link | grep wl` should list all your interfaces. Use the command `ip link | grep wl | perl -n -e '/^\d:\s+(.*):/ && print $1')` to extract the name of your wireless interface. You need to make sure that you're connected to your interface by running the command `sudo ip link set interface_name up`.
 
 
 After this you need to make sure that the **netctl** tool is installed. As this tool is part of the **base** group, it should already be installed in your system. After this we need to create a new profile in the folder `/etc/netctl/`. Create a new file in this folder named eduroam or whatever you want.
